@@ -119,8 +119,4 @@ The `dist/` folder can be deployed to **Vercel**, **Netlify**, or any static hos
 - **Mock database** — `localStorage` is seeded with realistic data (courses, instructors, users, progress) on first load, simulating a real API
 - **Optimistic UI** — enrollment, progress updates, and quiz submissions feel instant with local state updates
 
----
 
-## 📸 Screenshots
-
-> Visit the live demo: [https://lms-omega-gray.vercel.app](https://lms-omega-gray.vercel.app)
