@@ -97,8 +97,11 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 | Role | Email | Password |
 |---|---|---|
-| Admin | admin@lms.com | password |
-| Student | student@lms.com | password |
+| Admin | m@example.com | password |
+| Student | jane.smith@example.com | password |
+| Instructor | sarah.johnson@example.com | password |
+
+> The app uses a mock auth system — only the email is validated. Any password of 6+ characters works.
 
 ---
 
@@ -118,5 +121,3 @@ The `dist/` folder can be deployed to **Vercel**, **Netlify**, or any static hos
 - **Service layer abstraction** — `courseApi.ts` and `localStorageService.ts` separate data logic from UI components, making it easy to swap in a real backend
 - **Mock database** — `localStorage` is seeded with realistic data (courses, instructors, users, progress) on first load, simulating a real API
 - **Optimistic UI** — enrollment, progress updates, and quiz submissions feel instant with local state updates
-
-
