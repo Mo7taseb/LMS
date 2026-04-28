@@ -1,69 +1,126 @@
-# LMS Learn React Campus
+# 📚 CPDD LMS — Learning Management System
 
-## Getting Started
+A full-featured Learning Management System built during an internship at **CPDD**. The platform supports students, instructors, and admins with role-based access, course management, assessments, and progress tracking.
 
-This project is a Learning Management System built with React.
+🔗 **Live Demo:** [https://lms-omega-gray.vercel.app](https://lms-omega-gray.vercel.app)
+📁 **GitHub:** [https://github.com/Mo7taseb/LMS](https://github.com/Mo7taseb/LMS)
 
-## How can I edit this code?
+---
 
-**Use your preferred IDE**
+## 🎯 Features
 
-You can work locally using your preferred IDE by cloning this repo and pushing changes.
+### 👨‍🎓 Student
+- Browse and search courses by category, level, and price
+- Enroll in courses with a payment flow (credit card / wallet)
+- Watch video lessons and track progress per lesson
+- Take quizzes and assessments with instant feedback
+- View enrolled courses and completion status on the **My Learning** page
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 👨‍💼 Admin
+- Full **Admin Dashboard** with system overview
+- **Course Management** — create, edit, and delete courses
+- **User Management** — manage all users and roles
+- **Assessment Management** — create and manage quizzes/assessments
 
-Follow these steps:
+### 🔐 Auth & Access Control
+- Register & Login with JWT-style session handling
+- Role-based protected routes (`student` / `instructor` / `admin`)
+- Persistent auth state via `AuthContext`
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **React 18** | UI framework |
+| **TypeScript** | Type safety |
+| **Vite** | Build tool & dev server |
+| **Tailwind CSS** | Utility-first styling |
+| **shadcn/ui** | Accessible UI components |
+| **React Router v6** | Client-side routing |
+| **Axios** | HTTP requests |
+| **TanStack Query** | Server state management |
+| **localStorage** | Persistent mock data store |
+
+---
+
+## 🗂️ Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/          # Sidebar, Navbar, Layout wrapper
+│   └── ui/              # shadcn/ui components
+├── contexts/
+│   └── AuthContext.tsx  # Global auth state
+├── data/
+│   ├── mockData.ts      # Seeded courses, users, progress
+│   └── types.ts         # TypeScript interfaces
+├── pages/
+│   ├── admin/           # Admin dashboard, course & assessment mgmt
+│   ├── Courses.tsx
+│   ├── CourseDetails.tsx
+│   ├── CourseContent.tsx
+│   ├── MyLearning.tsx
+│   ├── Enroll.tsx
+│   ├── Assessment.tsx
+│   ├── Profile.tsx
+│   ├── Settings.tsx
+│   ├── Login.tsx
+│   └── Register.tsx
+├── services/
+│   ├── courseApi.ts          # Course service layer
+│   └── localStorageService.ts # Mock DB with CRUD operations
+└── App.tsx                   # Routes & providers
+```
+
+---
+
+## 🚀 Getting Started Locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# 1. Clone the repo
 git clone https://github.com/Mo7taseb/LMS.git
-
-# Step 2: Navigate to the project directory.
 cd LMS
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 2. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Start the dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 🧪 Demo Credentials
 
-**Use GitHub Codespaces**
+| Role | Email | Password |
+|---|---|---|
+| Admin | admin@lms.com | password |
+| Student | student@lms.com | password |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-You can deploy this project using various hosting platforms like Vercel, Netlify, or any other static hosting service.
-
-Build the project first:
+## 📦 Build & Deploy
 
 ```sh
 npm run build
 ```
 
-Then deploy the `dist` folder to your hosting platform.
+The `dist/` folder can be deployed to **Vercel**, **Netlify**, or any static hosting service.
 
-## Custom Domain
+---
 
-If you're using a hosting platform that supports custom domains, you can configure your domain in your hosting platform's settings.
+## 🧠 Key Implementation Highlights
+
+- **Role-based routing** — `ProtectedRoute` and `RoleRoute` components guard pages by authentication status and user role
+- **Service layer abstraction** — `courseApi.ts` and `localStorageService.ts` separate data logic from UI components, making it easy to swap in a real backend
+- **Mock database** — `localStorage` is seeded with realistic data (courses, instructors, users, progress) on first load, simulating a real API
+- **Optimistic UI** — enrollment, progress updates, and quiz submissions feel instant with local state updates
+
+---
+
+## 📸 Screenshots
+
+> Visit the live demo: [https://lms-omega-gray.vercel.app](https://lms-omega-gray.vercel.app)
