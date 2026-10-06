@@ -1,9 +1,11 @@
-# 📚 CPDD LMS — Learning Management System
+# 📚 CPDD LMS — Learning Management System Frontend
 
-A full-featured Learning Management System built during an internship at **CPDD**. The platform supports students, instructors, and admins with role-based access, course management, assessments, and progress tracking.
+A React/TypeScript learning-management frontend built during an internship at **CPDD**. The demo shows student, instructor, and admin flows for course management, assessments, and progress tracking. It uses seeded data and browser `localStorage`; it is not connected to a production backend.
 
 🔗 **Live Demo:** [https://lms-omega-gray.vercel.app](https://lms-omega-gray.vercel.app)
 📁 **GitHub:** [https://github.com/Mo7taseb/LMS](https://github.com/Mo7taseb/LMS)
+
+![SyVA learning-management frontend overview](docs/screenshots/overview.png)
 
 ---
 
@@ -11,7 +13,7 @@ A full-featured Learning Management System built during an internship at **CPDD*
 
 ### 👨‍🎓 Student
 - Browse and search courses by category, level, and price
-- Enroll in courses with a payment flow (credit card / wallet)
+- Try a simulated course-enrollment and payment flow (no real payment is processed)
 - Watch video lessons and track progress per lesson
 - Take quizzes and assessments with instant feedback
 - View enrolled courses and completion status on the **My Learning** page
@@ -23,9 +25,9 @@ A full-featured Learning Management System built during an internship at **CPDD*
 - **Assessment Management** — create and manage quizzes/assessments
 
 ### 🔐 Auth & Access Control
-- Register & Login with JWT-style session handling
-- Role-based protected routes (`student` / `instructor` / `admin`)
-- Persistent auth state via `AuthContext`
+- Demo register/login backed by browser `localStorage` (not production authentication)
+- Client-side role-based routes (`student` / `instructor` / `admin`)
+- Persistent demo auth state via `AuthContext`
 
 ---
 
